@@ -7,7 +7,7 @@
                 <span class="font-bold" v-if="isQuickActionButtonShow">{{ childInfo.title }}</span>
                 <button
                     :class="[`bg-white z-50 p-[6px] my-3 text-white rounded-full w-[60px] h-[60px] flex items-center justify-center shadow-lg`]">
-                    <img class="w-[26.67px] h-[26.67px]" :src="`_nuxt/assets/images/${logo}`" />
+                    <img class="w-[26.67px] h-[26.67px]" :src="`/images/${logo}`" />
                 </button>
             </div>
         </div>

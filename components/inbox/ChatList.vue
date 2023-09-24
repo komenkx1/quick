@@ -13,11 +13,11 @@
                             <div v-else>
                                 <div
                                     :class="[`bg-primary-one z-50 p-[6px] absolute ml-[15px]  text-white rounded-full w-[34px] h-[34px] flex items-center justify-center shadow-lg`]">
-                                    <img class="w-[18px] h-[18px]" :src="`_nuxt/assets/images/person-white.png`" />
+                                    <img class="w-[18px] h-[18px]" :src="`/images/person-white.png`" />
                                 </div>
                                 <div
                                     :class="[`bg-[#E0E0E0] z-20 p-[6px] right-[0px]  text-white rounded-full w-[34px] h-[34px] flex items-center justify-center shadow-lg`]">
-                                    <img class="w-[12px] h-[12px]" :src="`_nuxt/assets/images/person_black.png`" />
+                                    <img class="w-[12px] h-[12px]" :src="`/images/person_black.png`" />
                                 </div>
                             </div>
                         </div>

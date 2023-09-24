@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  alias:{
+    assets:"/<rootDir>/assets",
+  },
   ssr: false,
   css: [
     '@/assets/css/main.css',

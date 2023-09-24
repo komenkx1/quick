@@ -6,13 +6,13 @@
                     <div class="flex  items-center justify-between items-center mt-1">
                         <div class="left-section flex items-center gap-[14.43px]">
                             <img @click="backToListMessage()" class="w-[24px] h-[24px]"
-                                :src="`_nuxt/assets/images/left-arrow-white.png`">
+                                :src="`/images/left-arrow-white.png`">
                             <div class="info-time ">
                                 <p class="text-primary-one font-bold text-[16px]">{{ chatSelected.chatName }}</p>
                                 <p v-if="chatSelected.isGroup" class="text-[12px]">3 Participants</p>
                             </div>
                         </div>
-                        <img class="w-[14px] h-[14px] " :src="`_nuxt/assets/images/close.png`">
+                        <img class="w-[14px] h-[14px] " :src="`/images/close.png`">
                     </div>
                 </div>
                 <hr class="bg-[#BDBDBD] my-[13px]">

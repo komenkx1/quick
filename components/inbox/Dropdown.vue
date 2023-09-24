@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white">
         <Popper>
-            <img class="w-[24px] h-[24px]" :src="`_nuxt/assets/images/three-dot.png`">
+            <img class="w-[24px] h-[24px]" :src="`/images/three-dot.png`">
             <template #content>
                 <div class="bg-white text-start border-[1px] rounded-[5px] border-[#BDBDBD] w-[126px] max-h-[80px]">
                     <div class="" v-for="(item, index) in menuList" @click="handleAction(item.actions)">

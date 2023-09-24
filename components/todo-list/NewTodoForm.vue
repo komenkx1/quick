@@ -13,9 +13,9 @@
                         </span>
                     </div>
                     <div class="action flex ml-[10.32px]">
-                        <img class="w-[24px] h-[24px]" :src="`_nuxt/assets/images/arrow-up.svg`" v-if="isOpen"
+                        <img class="w-[24px] h-[24px]" :src="`/images/arrow-up.svg`" v-if="isOpen"
                             @click="toggleOpen">
-                        <img class="w-[24px] h-[24px]" :src="`_nuxt/assets/images/arrow-down.png`" v-else
+                        <img class="w-[24px] h-[24px]" :src="`/images/arrow-down.png`" v-else
                             @click="toggleOpen">
                         <Dropdown :menuList="menuList" @action="actionHandleMenu" />
                     </div>
@@ -29,15 +29,15 @@
                     <div class="w-[543px] ml-[35px]">
                         <div class="input-date flex items-center gap-[18px]">
                             <img class="w-[20px] h-[20px]" v-if="childForm.dueDate == null"
-                                :src="`_nuxt/assets/images/clock-grey.png`">
-                            <img class="w-[20px] h-[20px] bg-grey-5000" v-else :src="`_nuxt/assets/images/clock.png`">
+                                :src="`/images/clock-grey.png`">
+                            <img class="w-[20px] h-[20px] bg-grey-5000" v-else :src="`/images/clock.png`">
                             <DatePicker :input-attr="{ required: 'required' }" value-type="MM/DD/YYYY" type="date"
                                 format="MM/DD/YYYY" v-model:value="childForm.dueDate" placeholder="Set Date" />
                         </div>
                         <div class="input-date flex items-start gap-[22px] mt-[13px]">
                             <img class="w-[15px] h-[15px]" v-if="childForm.desc == ''"
-                                :src="`_nuxt/assets/images/pencil-grey.png`">
-                            <img class="w-[15px] h-[15px]" v-else :src="`_nuxt/assets/images/pencil.png`">
+                                :src="`/images/pencil-grey.png`">
+                            <img class="w-[15px] h-[15px]" v-else :src="`/images/pencil.png`">
                             <textarea v-model="childForm.desc" ref="textarea" @input="" placeholder="No Description"
                                 class="w-full h-auto" style="resize: none;"></textarea>
 

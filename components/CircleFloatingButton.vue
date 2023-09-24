@@ -15,7 +15,7 @@
 
             <button id="quickActionButton" @click="showChild"
                 :class="[`bg-primary-one index-50 mt-3 p-[6px] text-white rounded-full w-[68px] h-[68px] flex items-center justify-center shadow-lg`, !isQuickActionButtonShow ? 'hidden' : '']">
-                <img :src="`_nuxt/assets/images/${logo}`" />
+                <img :src="`/images/${logo}`" />
 
             </button>
 
