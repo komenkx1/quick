@@ -2,7 +2,7 @@
     <div
         class="bottom-[110px] overflow-y-auto right-0 fixed w-[734px] h-[537px] bg-white ml-auto mr-[34px] rounded-[5px] border-1 border-[#BDBDBD]">
 
-        <LoadingIndicator v-if="isLoading" />
+        <LoadingIndicator v-if="isLoading" text="Loading Chats ..."/>
 
         <transition v-else enter-active-class="transition duration-100 ease-out"
                 enter-from-class="transform scale-95 opacity-0" enter-to-class="transform scale-100 opacity-100"

@@ -9,9 +9,20 @@
                             <circle class="loader-path" cx="50" cy="50" r="20"></circle>
                         </svg>
                     </div>
-                    <p class="text-center font-bold text-[#4F4F4F] mt-[12.7px]">Loading Chats ...</p>
+                    <p class="text-center font-bold text-[#4F4F4F] mt-[12.7px]">{{ text }}</p>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    props:{
+        text: {
+            type: String,
+            default: 'Loading Chats ...'
+        }
+    }
+}
+</script>
