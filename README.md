@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
@@ -61,3 +62,7 @@ yarn preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+=======
+# quick
+assesment quick
+>>>>>>> a9b1ffa42cd2d9a2515c9da377f817e0636b85ac
