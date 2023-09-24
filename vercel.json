@@ -4,8 +4,8 @@
     {
       "src": "nuxt.config.ts",
       "use": "@nuxtjs/vercel-builder",
-      "config": {
-        "tsconfigPath": "./.nuxt/tsconfig.json"
+      "tscOptions": {
+        "sourceMap": false
       }
     }
   ]
