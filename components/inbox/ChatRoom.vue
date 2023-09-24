@@ -4,7 +4,7 @@
             <div class="header sticky top-0 bg-white z-10">
                 <div class="px-[25px] py-[23px]  w-full ">
                     <div class="flex  items-center justify-between items-center mt-1">
-                        <div class="left-section flex items-center gap-[14.43px]">
+                        <div class="left-section flex items-center gap-[14.43px] cursor-pointer">
                             <img @click="backToListMessage()" class="w-[24px] h-[24px]"
                                 :src="`/images/left-arrow-white.png`">
                             <div class="info-time ">
@@ -12,7 +12,7 @@
                                 <p v-if="chatSelected.isGroup" class="text-[12px]">3 Participants</p>
                             </div>
                         </div>
-                        <img class="w-[14px] h-[14px] " :src="`/images/close.png`">
+                        <img class="w-[14px] h-[14px] cursor-pointer" :src="`/images/close.png`" @click="backToListMessage()">
                     </div>
                 </div>
                 <hr class="bg-[#BDBDBD] my-[13px]">
@@ -72,7 +72,7 @@
                 <div ref="bootmPoint" />
             </div>
             <div @click="scrollDown()" v-if="!isVisibleNewMessage && newMessagePoint != null" class="newMessageIndicator sticky bottom-[90px]">
-                <div class="flex justify-center">
+                <div class="flex justify-center cursor-pointer">
                     <p class="p-[8px] text-primary-one rounded-[5px] bg-sticker-primary text-center">New
                         Message</p>
                 </div>

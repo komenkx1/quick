@@ -2,19 +2,24 @@
     <div
         class="bottom-[110px] overflow-y-auto right-0 fixed w-[734px] h-[537px] bg-white ml-auto mr-[34px] rounded-[5px] border-1 border-[#BDBDBD]">
 
-        <transition :enter-active-class="'transition ease-out duration-3000 transform'" enter-from-class="translate-x-full"
-            enter-to-class="translate-x-0" leave-active-class="transition ease-in duration-300 transform"
-            leave-from-class="translate-x-0" leave-to-class="translate-x-full">
-            <div class="mx-[22px] my-[24px] bg-white " v-if="!('id' in chatSelected)">
-                <div class="header sticky top-4 bg-white ">
-                    <SearchInput class="bg-white" />
+        <LoadingIndicator v-if="isLoading" />
+
+        <transition v-else enter-active-class="transition duration-100 ease-out"
+                enter-from-class="transform scale-95 opacity-0" enter-to-class="transform scale-100 opacity-100"
+                leave-active-class="transition duration-75 ease-out" leave-from-class="transform scale-100 opacity-100"
+                leave-to-class="transform scale-95 opacity-0">
+            <div class="">
+
+                <div class="mx-[22px] my-[24px] bg-white " v-if="!('id' in chatSelected)">
+                    <div class="header sticky top-4 bg-white z-[9999]">
+                        <SearchInput class="bg-white" />
+                    </div>
+                    <ChatList @setSelectedMessage="setSelectedMessage" />
                 </div>
-                <ChatList @setSelectedMessage="setSelectedMessage" />
+                <ChatRoom @backToListMessage="backToListMessage" :chatSelected="chatSelected" v-else />
             </div>
-            <ChatRoom @backToListMessage="backToListMessage" :chatSelected="chatSelected" v-else />
         </transition>
 
-        <LoadingIndicator v-if="isLoading" />
     </div>
 </template>
 
@@ -28,6 +33,12 @@ export default {
             chatSelected: {},
             isLoading: false
         }
+    },
+    mounted() {
+        this.isLoading = true
+        setTimeout(() => {
+            this.isLoading = false
+        }, 2000)
     },
     methods: {
         setSelectedMessage(data) {
