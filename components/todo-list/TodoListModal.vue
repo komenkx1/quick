@@ -1,6 +1,6 @@
 <template>
     <div
-        class="bottom-[110px] overflow-y-auto right-0 fixed w-[734px] h-[637px] bg-white ml-auto mr-[34px] rounded-[5px] border-1 border-[#BDBDBD]">
+        class="bottom-[110px] overflow-y-auto right-0 fixed w-[734px] h-[537px] bg-white ml-auto mr-[34px] rounded-[5px] border-1 border-[#BDBDBD]">
 
         <transition :enter-active-class="'transition ease-out duration-3000 transform'" enter-from-class="translate-x-full"
             enter-to-class="translate-x-0" leave-active-class="transition ease-in duration-300 transform"

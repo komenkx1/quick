@@ -7,8 +7,8 @@
                     <input required v-model="childForm.name" type="text" placeholder="Type Task Title"
                         class="border-[1px] w-[380px] h-[40px] p-[14.22px] rounded-[5px] border-[#828282] ml-[22px] mb-[12px]">
                 </div>
-                <div class="date-time flex items-center mr-auto">
-                    <div class="flex ml-[56.33px] gap-[19.75px] justify-end" @click="toggleOpen">
+                <div class="date-time flex items-center mr-auto" @click="toggleOpen">
+                    <div class="flex ml-[56.33px] gap-[19.75px] justify-end">
                         <span class="text-red-600 w-[70px] h-[5px]">
                         </span>
                     </div>
@@ -98,6 +98,7 @@ export default {
             switch (action) {
                 case 'SAVE':
                     //submit form program
+                    console.log(this.$refs.form.checkValidity())
                     if (this.$refs.form.checkValidity()) {
                         this.saveTodo()
                     }

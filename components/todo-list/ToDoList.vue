@@ -35,9 +35,7 @@
                                 :src="`_nuxt/assets/images/clock-grey.png`">
                             <img class="w-[20px] h-[20px] bg-grey-5000" v-else :src="`_nuxt/assets/images/clock.png`">
                             <DatePicker value-type="MM/DD/YYYY" type="date" format="MM/DD/YYYY" v-model:value="todo.dueDate"
-                                placeholder="Set Date" :popup-style="{
-                                    left: '1450px',
-                                }" />
+                                placeholder="Set Date" />
                         </div>
                         <div class="input-date flex items-start gap-[22px] mt-[13px]">
                             <img class="w-[15px] h-[15px]" v-if="todo.desc == ''"
