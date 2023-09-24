@@ -45,7 +45,7 @@
                                         <p class="mt-1 text-[12px] text-primary-two">19:32</p>
                                     </div>
                                     <div class="relative">
-                                        <div class="relative">
+                                        <div class="relative cursor-pointer">
                                             <Dropdown />
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@
                                 <p class="font-bold text-outbox-chat-title">You</p>
                                 <div class="flex items-start mt-2 gap-[5px]">
                                     <div class="relative">
-                                        <div class="relative">
+                                        <div class="relative cursor-pointer">
                                             <Dropdown />
                                         </div>
                                     </div>

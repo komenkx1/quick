@@ -61,6 +61,10 @@
 <script>
 
 export default {
+    props: {
+        chatData: Array,
+        default: () => []
+    },
     setup() {
         const store = useStore();
 
@@ -72,11 +76,11 @@ export default {
     },
     computed: {
         listChat() {
-            const listChat = this.store.$state.listChat
+            const listChat = this.chatData
             listChat.map((chat) => {
                 chat.lastChatPreview = chat.chat[chat.chat.length - 1]
             })
-            return this.store.$state.listChat
+            return listChat
         }
     },
     methods: {

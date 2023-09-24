@@ -18,9 +18,8 @@
                         <span>{{ todo.dueDate }}</span>
                     </div>
                     <div class="action flex ml-[10.32px]">
-                        <img class="w-[24px] h-[24px]" @click="toogleOpen(todo)" :src="`/images/arrow-up.svg`"
-                            v-if="todo.isOpen">
-                        <img class="w-[24px] h-[24px]" @click="toogleOpen(todo)" :src="`/images/arrow-down.png`" v-else>
+                        <img class="w-[24px] h-[24px]" :src="`/images/arrow-up.svg`" v-if="todo.isOpen">
+                        <img class="w-[24px] h-[24px]" :src="`/images/arrow-down.png`" v-else>
                         <Dropdown @action="actionHandleMenu" :menuList="menuList" :data="todo" />
 
                     </div>
@@ -43,8 +42,8 @@
                         <div class="input-date flex items-start gap-[22px] mt-[13px]">
                             <img class="w-[15px] h-[15px]" v-if="todo.desc == ''" :src="`/images/pencil-grey.png`">
                             <img class="w-[15px] h-[15px]" v-else :src="`/images/pencil.png`">
-                            <textarea v-model="todo.desc" ref="textarea" @input="auto_grow($event)" placeholder="No Description"
-                                class="w-full" style="resize: none;"></textarea>
+                            <textarea v-model="todo.desc" ref="textarea" @input="auto_grow($event)"
+                                placeholder="No Description" class="w-full h-auto" style="resize: none;"></textarea>
                         </div>
                     </div>
                 </div>

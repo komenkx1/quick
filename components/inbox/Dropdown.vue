@@ -26,12 +26,12 @@ export default defineComponent({
             type: Array,
             default: () => [
                 {
-                    name: "edit",
+                    name: "Edit",
                     color: "primary-one",
                     actions: "EDIT"
                 },
                 {
-                    name: "delete",
+                    name: "Delete",
                     color: "red-600",
                     actions: "DELETE"
                 }
