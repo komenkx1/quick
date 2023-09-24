@@ -8,16 +8,18 @@
                     <p :class="['ml-[22.5px] font-bold', todo.isComplate ? 'line-through text-[#828282]' : '']">{{ todo.name
                     }}</p>
                 </div>
-                <div class="date-time flex items-center mr-auto">
-                    <div class="flex ml-[56.33px] gap-[19.75px] justify-end" @click="toogleOpen(todo)">
+                <div class="date-time flex items-center mr-auto" @click="toogleOpen(todo)">
+                    <div class="flex ml-[56.33px] gap-[19.75px] justify-end" >
                         <span class="text-red-600 w-[70px]">
-                            <p v-if="deadline(todo.dueDate) <= 10 && deadline(todo.dueDate) != 0 && !todo.isComplate">{{ deadline(todo.dueDate)
+                            <p v-if="deadline(todo.dueDate) <= 10 && deadline(todo.dueDate) != 0 && !todo.isComplate">{{
+                                deadline(todo.dueDate)
                             }} Days Left</p>
                         </span>
                         <span>{{ todo.dueDate }}</span>
                     </div>
                     <div class="action flex ml-[10.32px]">
-                        <img class="w-[24px] h-[24px]" @click="toogleOpen(todo)" :src="`/images/arrow-up.svg`" v-if="todo.isOpen" >
+                        <img class="w-[24px] h-[24px]" @click="toogleOpen(todo)" :src="`/images/arrow-up.svg`"
+                            v-if="todo.isOpen">
                         <img class="w-[24px] h-[24px]" @click="toogleOpen(todo)" :src="`/images/arrow-down.png`" v-else>
                         <Dropdown @action="actionHandleMenu" :menuList="menuList" :data="todo" />
 
@@ -31,24 +33,24 @@
                 <div class="body" v-if="todo.isOpen">
                     <div class="w-[543px] ml-[35px]">
                         <div class="input-date flex items-center gap-[18px]">
-                            <img class="w-[20px] h-[20px]" v-if="todo.dueDate == null"
-                                :src="`/images/clock-grey.png`">
+                            <img class="w-[20px] h-[20px]" v-if="todo.dueDate == null" :src="`/images/clock-grey.png`">
                             <img class="w-[20px] h-[20px] bg-grey-5000" v-else :src="`/images/clock.png`">
-                            <DatePicker value-type="MM/DD/YYYY" type="date" format="MM/DD/YYYY" v-model:value="todo.dueDate"
+                            <DatePicker :input-attr="{
+                                required: 'required',
+                            }" value-type="MM/DD/YYYY" type="date" format="MM/DD/YYYY" v-model:value="todo.dueDate"
                                 placeholder="Set Date" />
                         </div>
                         <div class="input-date flex items-start gap-[22px] mt-[13px]">
-                            <img class="w-[15px] h-[15px]" v-if="todo.desc == ''"
-                                :src="`/images/pencil-grey.png`">
+                            <img class="w-[15px] h-[15px]" v-if="todo.desc == ''" :src="`/images/pencil-grey.png`">
                             <img class="w-[15px] h-[15px]" v-else :src="`/images/pencil.png`">
                             <textarea v-model="todo.desc" ref="textarea" @input="" placeholder="No Description"
-                                class="w-full h-auto" style="resize: none;"></textarea>
+                                class="w-full h-[57px]" style="resize: none;"></textarea>
                         </div>
                     </div>
                 </div>
             </transition>
         </div>
-        <hr class="bg-[#828282]  mx-[29px] my-[22px]">
+        <hr class="bg-[#828282]  mx-[29px] my-[19px]">
     </div>
     <NewTodoForm v-model="todo" v-if="isNewTask" @save="saveTodo" />
 </template>
@@ -125,6 +127,12 @@ export default {
         saveTodo() {
             this.store.addNewTodoList(this.todo)
             this.$emit('closeForm')
+            this.todo = {
+                name: "",
+                dueDate: null,
+                isComplate: false,
+                desc: "",
+            }
         },
         toogleOpen(todo) {
             todo.isOpen = !todo.isOpen
@@ -142,10 +150,8 @@ export default {
             // Menghitung sisa hari hanya jika hasilnya tidak negatif
             if (selisihWaktu >= 0) {
                 var sisaHari = Math.floor(selisihWaktu / (1000 * 60 * 60 * 24));
-                console.log('Sisa hari menuju tanggal ' + tanggalTarget.toLocaleDateString() + ' adalah ' + sisaHari + ' hari.');
                 return sisaHari;
             } else {
-                console.log('Tanggal target sudah lewat.');
                 return 0
             }
 

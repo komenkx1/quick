@@ -20,7 +20,10 @@ export default defineNuxtConfig({
       },
     ],
   ],
-
+plugins: [
+  //toast
+  { src: '~/plugins/toast.js', mode: 'client' },
+],
   postcss: {
     plugins: {
       tailwindcss: {},
