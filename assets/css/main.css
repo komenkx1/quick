@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+  @import url('https://fonts.cdnfonts.com/css/lato');
   html {
     /* //lato */
     font-family: 'Lato', sans-serif;
@@ -38,7 +39,7 @@ input.search-parent {
   --rotation-animation-easing: linear;
   --stroke-animation-speed: 1.5s;
   --stroke-animation-easing: ease-in-out;
-  --stroke-width:6px;
+  --stroke-width: 6px;
   --stroke-start-dasharray: 1, 200;
   --stroke-end-dasharray: 89, 200;
 }
@@ -92,6 +93,7 @@ input.search-parent {
     stroke: #C4C4C4;
   }
 }
+
 .input-container {
   position: relative;
   display: inline-block;

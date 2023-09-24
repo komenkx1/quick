@@ -17,8 +17,8 @@
                         <span>{{ todo.dueDate }}</span>
                     </div>
                     <div class="action flex ml-[10.32px]">
-                        <img class="w-[24px] h-[24px]" :src="`/images/arrow-up.svg`" v-if="todo.isOpen">
-                        <img class="w-[24px] h-[24px]" :src="`/images/arrow-down.png`" v-else>
+                        <img class="w-[24px] h-[24px]" @click="toogleOpen(todo)" :src="`/images/arrow-up.svg`" v-if="todo.isOpen" >
+                        <img class="w-[24px] h-[24px]" @click="toogleOpen(todo)" :src="`/images/arrow-down.png`" v-else>
                         <Dropdown @action="actionHandleMenu" :menuList="menuList" :data="todo" />
 
                     </div>
@@ -112,10 +112,10 @@ export default {
     },
     methods: {
         actionHandleMenu(action, data) {
-            console.log(data)
             switch (action) {
                 case 'DELETE':
-                    this.store.removeTodoList(this.todo)
+                    //get index of data
+                    this.store.removeTodoList(data)
                     break;
 
                 default:

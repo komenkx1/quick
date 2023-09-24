@@ -98,7 +98,6 @@ export default {
             switch (action) {
                 case 'SAVE':
                     //submit form program
-                    console.log(this.$refs.form.checkValidity())
                     if (this.$refs.form.checkValidity()) {
                         this.saveTodo()
                     }
