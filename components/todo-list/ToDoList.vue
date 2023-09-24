@@ -9,7 +9,7 @@
                     }}</p>
                 </div>
                 <div class="date-time flex items-center mr-auto" @click="toogleOpen(todo)">
-                    <div class="flex ml-[56.33px] gap-[19.75px] justify-end" >
+                    <div class="flex ml-[56.33px] gap-[19.75px] justify-end">
                         <span class="text-red-600 w-[70px]">
                             <p v-if="deadline(todo.dueDate) <= 10 && deadline(todo.dueDate) != 0 && !todo.isComplate">{{
                                 deadline(todo.dueDate)
@@ -43,14 +43,14 @@
                         <div class="input-date flex items-start gap-[22px] mt-[13px]">
                             <img class="w-[15px] h-[15px]" v-if="todo.desc == ''" :src="`/images/pencil-grey.png`">
                             <img class="w-[15px] h-[15px]" v-else :src="`/images/pencil.png`">
-                            <textarea v-model="todo.desc" ref="textarea" @input="" placeholder="No Description"
-                                class="w-full h-[57px]" style="resize: none;"></textarea>
+                            <textarea v-model="todo.desc" ref="textarea" @input="auto_grow($event)" placeholder="No Description"
+                                class="w-full" style="resize: none;"></textarea>
                         </div>
                     </div>
                 </div>
             </transition>
         </div>
-        <hr class="bg-[#828282]  mx-[29px] my-[19px]">
+        <hr class="bg-[#828282]  mx-[29px] my-[10px]">
     </div>
     <NewTodoForm v-model="todo" v-if="isNewTask" @save="saveTodo" />
 </template>
@@ -122,6 +122,11 @@ export default {
 
                 default:
                     break;
+            }
+        },
+        auto_grow(event) {
+            if (event.target.scrollHeight <= 57) {
+                event.target.style.height = (event.target.scrollHeight) + "px";
             }
         },
         saveTodo() {

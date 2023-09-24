@@ -38,8 +38,8 @@
                         <div class="input-date flex items-start gap-[22px] mt-[13px]">
                             <img class="w-[15px] h-[15px]" v-if="childForm.desc == ''" :src="`/images/pencil-grey.png`">
                             <img class="w-[15px] h-[15px]" v-else :src="`/images/pencil.png`">
-                            <textarea v-model="childForm.desc" ref="textarea" @input="" placeholder="No Description"
-                                class="w-full h-auto" style="resize: none;"></textarea>
+                            <textarea v-model="childForm.desc" ref="textarea" @input="auto_grow($event)"
+                                placeholder="No Description" class="w-full h-auto" style="resize: none;"></textarea>
 
                         </div>
                     </div>
@@ -101,10 +101,10 @@ export default {
                 case 'SAVE':
                     //submit form program
                     if (this.childForm.name == '') {
-                        return this.toast.error('Task Title is required')
+                        return
                     }
                     if (this.childForm.dueDate == null) {
-                        return this.toast.error('Due Date is required')
+                        return
                     }
                     this.saveTodo()
 
@@ -116,6 +116,11 @@ export default {
         },
         toggleOpen() {
             this.isOpen = !this.isOpen
+        },
+        auto_grow(event) {
+            if (event.target.scrollHeight <= 57) {
+                event.target.style.height = (event.target.scrollHeight) + "px";
+            }
         }
     }
 }
