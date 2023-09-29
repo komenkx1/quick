@@ -109,7 +109,9 @@ export default {
                     this.saveTodo()
 
                     break;
-
+                case 'CANCEL':
+                    this.$emit('close')
+                    break;
                 default:
                     break;
             }

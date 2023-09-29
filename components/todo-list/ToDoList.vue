@@ -43,7 +43,8 @@
                             <img class="w-[15px] h-[15px]" v-if="todo.desc == ''" :src="`/images/pencil-grey.png`">
                             <img class="w-[15px] h-[15px]" v-else :src="`/images/pencil.png`">
                             <textarea v-model="todo.desc" ref="textarea" @input="auto_grow($event)"
-                                placeholder="No Description" class="w-full h-auto" style="resize: none;overflow:hidden"></textarea>
+                                placeholder="No Description" class="w-full h-auto"
+                                style="resize: none;overflow:hidden"></textarea>
                         </div>
                     </div>
                 </div>
@@ -51,7 +52,7 @@
         </div>
         <hr class="bg-[#828282]  mx-[29px] my-[10px]">
     </div>
-    <NewTodoForm v-model="todo" v-if="isNewTask" @save="saveTodo" />
+    <NewTodoForm v-model="todo" v-if="isNewTask" @save="saveTodo" @close="closeForm" />
 </template>
 
 <script>
@@ -115,7 +116,6 @@ export default {
         actionHandleMenu(action, data) {
             switch (action) {
                 case 'DELETE':
-                    //get index of data
                     this.store.removeTodoList(data)
                     break;
 
@@ -130,6 +130,15 @@ export default {
         },
         saveTodo() {
             this.store.addNewTodoList(this.todo)
+            this.$emit('closeForm')
+            this.todo = {
+                name: "",
+                dueDate: null,
+                isComplate: false,
+                desc: "",
+            }
+        },
+        closeForm() {
             this.$emit('closeForm')
             this.todo = {
                 name: "",

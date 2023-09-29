@@ -5,7 +5,7 @@
             <template #content>
                 <div class="bg-white text-start border-[1px] rounded-[5px] border-[#BDBDBD] w-[126px] max-h-[80px]">
                     <div class="w-full" v-for="(item, index) in menuList" @click="handleAction(item.actions)">
-                        <div class="item px-[12px] py-[5px]" @click="handleAction(item.actions)">
+                        <div class="item px-[12px] py-[5px]">
                             <button :class="`text-${item.color} w-full text-start`">{{ item.name }}</button>
                         </div>
                         <hr class="border-[#BDBDBD]" v-if="index != item.length - 1">
@@ -48,7 +48,7 @@ export default defineComponent({
 
     methods: {
         handleAction(action) {
-            this.$emit("action", action, this.data);
+            return this.$emit("action", action, this.data);
         },
     },
 });
