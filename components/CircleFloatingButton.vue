@@ -13,7 +13,7 @@
                     :activeLogo="child.activeIcon" color="white" class="index-30 mt-2" />
             </transition>
 
-            <div :class="['flex gap-[26px] items-center text-white transition-all ease-in-out', !isQuickActionButtonShow ? 'duration-700 transform blur-sm translate-x-[400px] scale-0 opacity-0 invisible w-0 order-last ' : 'duration-700 order-last transform  translate-x-[-0%] scale-100 opacity-100']"
+            <div :class="['flex gap-[26px] items-center text-white transition-all ease-in-out', !isQuickActionButtonShow ? 'duration-100 transform blur-sm translate-x-[100px] scale-0 opacity-0 invisible w-0 order-last ' : 'duration-500 order-last transform  translate-x-[-0%] scale-100']"
                 @click="showChild">
                 <div class="default-button text-center">
                     <span class="font-bold invisible">devider</span>

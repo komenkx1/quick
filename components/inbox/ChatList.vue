@@ -2,7 +2,7 @@
     <div class=" px-1 my-1">
 
         <div @click="setSelectedMessage(chat)" v-for="(chat, i) in listChat" :key="i"
-            class=" hover:bg-blue-200 hover:rounded-[5px] p-[2px] cursor-pointer ">
+            class="transition-all duration-300 hover:bg-blue-200 hover:rounded-[5px] p-[2px] cursor-pointer ">
             <div class="list-chat">
                 <div class=" items-center">
                     <div class="item-chat my-[22px] ">

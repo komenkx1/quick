@@ -1,6 +1,6 @@
 <template>
     <div
-        class="bottom-[110px] overflow-y-auto right-0 fixed w-[764px] h-[537px] bg-white ml-auto mr-[34px] rounded-[5px] border-1 border-[#BDBDBD]">
+        class="bottom-[110px] overflow-y-auto right-0 fixed w-[734px] h-[537px] bg-white ml-auto mr-[34px] rounded-[5px] border-1 border-[#BDBDBD]">
 
         <LoadingIndicator v-if="isLoading" text="Loading Chats ..." />
 
