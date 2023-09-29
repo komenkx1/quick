@@ -42,13 +42,21 @@ export default {
             chatData: this.store.$state.listChat
         }
     },
-    mounted() {
-        this.isLoading = true
-        setTimeout(() => {
-            this.isLoading = false
-        }, 2000)
+    props: {
+        show: {
+            type: Boolean,
+            default: false
+        }
     },
     watch: {
+        show(val) {
+            if (val) {
+                this.isLoading = true
+                setTimeout(() => {
+                    this.isLoading = false
+                }, 2000)
+            }
+        },
         searchInput(newSearch) {
             const searchInput = this.searchInput
 

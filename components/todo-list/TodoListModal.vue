@@ -34,11 +34,21 @@ export default {
             store
         }
     },
-    mounted() {
-        this.isLoading = true
-        setTimeout(() => {
-            this.isLoading = false
-        }, 2000)
+    props: {
+        show: {
+            type: Boolean,
+            default: false
+        }
+    },
+    watch: {
+        show(val) {
+            if (val) {
+                this.isLoading = true
+                setTimeout(() => {
+                    this.isLoading = false
+                }, 2000)
+            }
+        },
     },
     data() {
         return {
