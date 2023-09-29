@@ -1,7 +1,7 @@
 
 <template>
     <div v-for="todo in dataTodo">
-        <div class="flex items-center mx-[29px] mt-[22px] flex-wrap cursor-pointer">
+        <div class="flex items-center mx-[5px] mt-[22px] flex-wrap cursor-pointer">
             <div class="header flex items-center">
                 <input type="checkbox" v-model="todo.isComplate" :true-value="true" :false-value="false">
                 <div class="w-[356px]" @click="toogleOpen(todo)">
@@ -29,8 +29,8 @@
                 enter-from-class="transform scale-95 opacity-0" enter-to-class="transform scale-100 opacity-100"
                 leave-active-class="transition duration-75 ease-out" leave-from-class="transform scale-100 opacity-100"
                 leave-to-class="transform scale-95 opacity-0">
-                <div class="body" v-if="todo.isOpen">
-                    <div class="w-[543px] ml-[35px]">
+                <div class="body mt-3" v-if="todo.isOpen">
+                    <div class="w-[590px] ml-[35px]">
                         <div class="input-date flex items-center gap-[18px]">
                             <img class="w-[20px] h-[20px]" v-if="todo.dueDate == null" :src="`/images/clock-grey.png`">
                             <img class="w-[20px] h-[20px] bg-grey-5000" v-else :src="`/images/clock.png`">
@@ -43,7 +43,7 @@
                             <img class="w-[15px] h-[15px]" v-if="todo.desc == ''" :src="`/images/pencil-grey.png`">
                             <img class="w-[15px] h-[15px]" v-else :src="`/images/pencil.png`">
                             <textarea v-model="todo.desc" ref="textarea" @input="auto_grow($event)"
-                                placeholder="No Description" class="w-full h-auto" style="resize: none;"></textarea>
+                                placeholder="No Description" class="w-full h-auto" style="resize: none;overflow:hidden"></textarea>
                         </div>
                     </div>
                 </div>

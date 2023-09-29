@@ -1,6 +1,6 @@
 <template>
     <form ref="form">
-        <div class="flex items-center mx-[29px] mt-[22px] flex-wrap cursor-pointer">
+        <div class="flex items-center mx-[5px] mt-[22px] flex-wrap cursor-pointer">
             <div class="header flex items-center">
                 <input type="checkbox" :true-value="true" :false-value="false">
                 <div class="w-[435px]" @click="toggleOpen">
@@ -12,7 +12,7 @@
                         <span class="text-red-600 w-[70px] h-[10px]">
                         </span>
                     </div>
-                    <div class="action flex ml-[10.32px] items-center">
+                    <div class="action flex ml-[19.32px] items-center">
                         <div class="px-2" v-if="isOpen" @click="toggleOpen">
                             <img class="w-[24px] h-[24px]" :src="`/images/arrow-up.svg`">
                         </div>
