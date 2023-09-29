@@ -2,11 +2,11 @@
     <div>
         <!-- //circle floating button -->
         <div class="flex gap-[26px] items-center text-white" @click="active">
-            <CircleActiveFloatingButton :color="child.activeBgColor" :logo="activeLogo" v-if="this.childInfo.isActive" />
+            <CircleActiveFloatingButton class="mt-2" :color="child.activeBgColor" :logo="activeLogo" v-if="this.childInfo.isActive" />
             <div class="default-button text-center" v-else>
-                <span class="font-bold" v-if="isQuickActionButtonShow">{{ childInfo.title }}</span>
+                <span class="font-bold " v-if="isQuickActionButtonShow">{{ childInfo.title }}</span>
                 <button
-                    :class="[`bg-white z-50 p-[6px] my-3 text-white rounded-full w-[60px] h-[60px] flex items-center justify-center shadow-lg`]">
+                    :class="[`bg-white z-50 text-white  mt-3 rounded-full w-[56px] h-[56px] flex items-center justify-center shadow-lg`]">
                     <img class="w-[26.67px] h-[26.67px]" :src="`/images/${logo}`" />
                 </button>
             </div>
