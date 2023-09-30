@@ -15,6 +15,7 @@ export const useStore = defineStore("dtore", {
             id: 1,
             isNewMessage: false,
             sender: "You",
+            replyMessage: {},
             message:
               "No worries. It will be completed ASAP. I’ve asked him yesterday.",
             date: "January 1,2021 19:32",
@@ -31,6 +32,7 @@ export const useStore = defineStore("dtore", {
             id: 3,
             isNewMessage: false,
             sender: "You",
+            replyMessage: {},
             message:
               "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.",
             date: "June 09,2021 19:32",
@@ -47,6 +49,7 @@ export const useStore = defineStore("dtore", {
             id: 6,
             isNewMessage: false,
             sender: "You",
+            replyMessage: {},
             message:
               "No worries. It will be completed ASAP. I’ve asked him yesterday.",
             date: "January 1,2021 19:32",
@@ -63,6 +66,7 @@ export const useStore = defineStore("dtore", {
             id: 8,
             isNewMessage: false,
             sender: "You",
+            replyMessage: {},
             message:
               "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.",
             date: "June 09,2021 19:32",
@@ -102,6 +106,7 @@ export const useStore = defineStore("dtore", {
             id: 1,
             isNewMessage: false,
             sender: "You",
+            replyMessage: {},
             message:
               "No worries. It will be completed ASAP. I’ve asked him yesterday.",
             date: "January 1,2021 19:32",
@@ -118,6 +123,7 @@ export const useStore = defineStore("dtore", {
             id: 3,
             isNewMessage: false,
             sender: "You",
+            replyMessage: {},
             message:
               "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.",
             date: "June 09,2021 19:32",
@@ -150,6 +156,7 @@ export const useStore = defineStore("dtore", {
             id: 1,
             isNewMessage: false,
             sender: "You",
+            replyMessage: {},
             message:
               "No worries. It will be completed ASAP. I’ve asked him yesterday.",
             date: "January 1,2021 19:32",
@@ -166,6 +173,7 @@ export const useStore = defineStore("dtore", {
             id: 3,
             isNewMessage: false,
             sender: "You",
+            replyMessage: {},
             message:
               "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.",
             date: "June 09,2021 19:32",
@@ -197,6 +205,7 @@ export const useStore = defineStore("dtore", {
             id: 1,
             isNewMessage: false,
             sender: "You",
+            replyMessage: {},
             message:
               "No worries. It will be completed ASAP. I’ve asked him yesterday.",
             date: "January 1,2021 19:32",
@@ -213,6 +222,7 @@ export const useStore = defineStore("dtore", {
             id: 3,
             isNewMessage: false,
             sender: "You",
+            replyMessage: {},
             message:
               "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.",
             date: "June 09,2021 19:32",
@@ -252,6 +262,7 @@ export const useStore = defineStore("dtore", {
             id: 2,
             isNewMessage: false,
             sender: "You",
+            replyMessage: {},
             message: "Hi, I need help with something can you help me ?",
             date: "September 23, 2023",
           },
@@ -306,6 +317,30 @@ export const useStore = defineStore("dtore", {
     showChat(id) {
       const chat = this.listChat.find((chat) => chat.id === id);
       return chat;
+    },
+    addChat(chatSoruce, newMessage) {
+      const index = this.listChat.findIndex(
+        (item) => item.id === chatSoruce.id
+      );
+      this.listChat[index].chat.push(newMessage);
+    },
+    removeChat(chatSoruce, chat) {
+      const index = this.listChat.findIndex(
+        (item) => item.id === chatSoruce.id
+      );
+      const indexChat = this.listChat[index].chat.findIndex(
+        (item) => item.id === chat.id
+      );
+      this.listChat[index].chat.splice(indexChat, 1);
+    },
+    editChat(chatSoruce, chat) {
+      const index = this.listChat.findIndex(
+        (item) => item.id === chatSoruce.id
+      );
+      const indexChat = this.listChat[index].chat.findIndex(
+        (item) => item.id === chat.id
+      );
+      this.listChat[index].chat[indexChat] = chat;
     },
   },
 });

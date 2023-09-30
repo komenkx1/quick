@@ -16,7 +16,9 @@
                     </div>
                     <ChatList :chatData="chatData" @setSelectedMessage="setSelectedMessage" />
                 </div>
-                <ChatRoom @backToListMessage="backToListMessage" :chatSelected="chatSelected" v-else />
+                <ChatRoom @scrollDown="scrolldown" @backToListMessage="backToListMessage" :chatSelected="chatSelected" v-else />
+                <div ref="bootmPoint" />
+
             </div>
         </transition>
 
@@ -74,6 +76,9 @@ export default {
 
     },
     methods: {
+        scrolldown() {
+            this.$refs.bootmPoint.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' })
+        },
         setSelectedMessage(data) {
             this.chatSelected = data
         },
