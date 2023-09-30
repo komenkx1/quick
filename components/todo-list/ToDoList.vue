@@ -47,6 +47,7 @@
                                 style="resize: none;overflow:hidden"></textarea>
                         </div>
                     </div>
+                    <StickerDropdown class="w-full ml-2" />
                 </div>
             </transition>
         </div>

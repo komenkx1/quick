@@ -23,6 +23,8 @@ export default defineNuxtConfig({
 plugins: [
   //toast
   { src: '~/plugins/toast.js', mode: 'client' },
+  { src: '~/plugins/scrollbar.js', mode: 'client' },
+
 ],
   postcss: {
     plugins: {
