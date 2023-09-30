@@ -43,7 +43,8 @@
                             <img class="w-[15px] h-[15px]" v-if="todo.desc == ''" :src="`/images/pencil-grey.png`">
                             <img class="w-[15px] h-[15px]" v-else :src="`/images/pencil.png`">
                             <textarea v-model="todo.desc" ref="textarea" @input="auto_grow($event)"
-                                placeholder="No Description" class="w-full h-auto"
+                                placeholder="No Description"
+                                class="w-full h-auto focus:outline-none focus:ring focus:ring-[#828282] focus:ring-[1px] focus:rounded-[3px] px-[10px]"
                                 style="resize: none;overflow:hidden"></textarea>
                         </div>
                     </div>
