@@ -250,7 +250,9 @@ export default {
             })
             this.inputMessage = ""
             this.replyChat = {}
-
+            this.chatSelected.chat.forEach(element => {
+                element.isNewMessage = false
+            });
             this.keyTypeBar++
 
         },
