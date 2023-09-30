@@ -11,7 +11,7 @@
                 <div class="date-time flex items-center mr-auto" @click="toogleOpen(todo)">
                     <div class="flex ml-[56.33px] gap-[19.75px] justify-end">
                         <span class="text-red-600 w-[70px]">
-                            <p v-if="deadline(todo.dueDate) <= 10 && deadline(todo.dueDate) != 0 && !todo.isComplate">{{
+                            <p class="text-[14px]" v-if="deadline(todo.dueDate) <= 10 && deadline(todo.dueDate) != 0 && !todo.isComplate">{{
                                 deadline(todo.dueDate)
                             }} Days Left</p>
                         </span>

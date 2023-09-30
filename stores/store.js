@@ -278,7 +278,7 @@ export const useStore = defineStore("dtore", {
       },
       {
         name: "Set up documentation report for several Cases : Case 145443, Case 192829 and Case 182203",
-        dueDate: "03/06/2021",
+        dueDate: "10/03/2023",
         isComplate: false,
         desc: "All Cases must include all payment transactions, all documents and forms filled. All conversations in comments and messages in channels and emails should be provided as well in.",
       },
